@@ -15,4 +15,4 @@ video = yt.get('mp4', '360p')
 # video = yt.get('.3gp', '144p')
 
 print("Downloading")
-video.download(os.path.join("Temp",fileName,".mp4"))
+video.download(os.path.join("Temp",fileName+".mp4"))
