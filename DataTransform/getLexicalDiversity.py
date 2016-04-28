@@ -1,4 +1,4 @@
-from DataTransform.sanitizeString import sanitizeString
+from DataTransform.Helpers.sanitizeString import sanitizeString
 
 def calculateLexicalDiversity(text):
     textSplit = sanitizeString(text).split()

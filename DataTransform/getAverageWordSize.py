@@ -1,7 +1,7 @@
 from numpy import average
 
-from DataTransform.sanitizeString import sanitizeString
-from DataTransform.testTransform import string_to_test
+from DataTransform.Helpers.sanitizeString import sanitizeString
+
 
 def calculateAverageWordSize(text):
     textSplit = sanitizeString(text).split()
