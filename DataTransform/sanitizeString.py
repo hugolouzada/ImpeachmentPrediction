@@ -9,10 +9,10 @@ def remove_ponctuations(txt):
     return re.sub(r'[^0-9a-zA-Z_\s]','',txt)
 
 def sanitizeString(txt):
-    return remove_ponctuations(remover_acentos(txt))
+    return remove_ponctuations(remover_acentos(txt)).lower()
 
-txt = '[ACENTUAÇÃO] ç: áàãâä! éèêë? íì&#297;îï, óòõôö; úù&#361;ûü.'
-print(txt)
-print(sanitizeString(txt))
-print(remover_acentos(txt))
-print(remove_ponctuations(txt))
+# txt = string_to_test
+# print(txt)
+# print(sanitizeString(txt))
+# print(remover_acentos(txt))
+# print(remove_ponctuations(txt))

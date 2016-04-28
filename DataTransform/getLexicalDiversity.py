@@ -1,11 +1,17 @@
+from DataTransform.sanitizeString import sanitizeString
+
 def calculateLexicalDiversity(text):
-    textSplit = text.split()
+    textSplit = sanitizeString(text).split()
 
     return len(set(textSplit))/len(textSplit)
 
 def getLexicalDiversity(df):
     return df['Discurso'].map(lambda d: calculateLexicalDiversity(str(d)))
 
-print(len('You say yes, I say no you say stop and I say go go go, oh no'.split()))
-print((set('You say yes, I say no You say stop and I say go go go, oh no'.split())))
-print(calculateLexicalDiversity('You say yes, I say no You say stop and I say go go go, oh no'))
+# txt = string_to_test
+# txt = sanitizeString(txt)
+# print(txt)
+# print((txt.split()))
+# print((set(txt.split())))
+# print(len(set(txt.split()))/len(txt.split()))
+# print(calculateLexicalDiversity(txt))
