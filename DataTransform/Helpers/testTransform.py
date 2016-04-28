@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 string_to_test = 'You say yes, I say no you say stop and I say go go go, oh no'
 
-
+# https://stanford.edu/~mwaskom/software/seaborn/tutorial/categorical.html
 def testTransformContinuousVar(df, newVarName, transformFunction, targetVar='Vote'):
     df[newVarName] = transformFunction(df)
 
