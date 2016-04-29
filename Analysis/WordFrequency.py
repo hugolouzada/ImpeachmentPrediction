@@ -2,11 +2,11 @@ from collections import Counter
 from DataGathering.getVoteData import getVoteData
 from DataTransform.Helpers.sanitizeString import sanitizeString
 from DataTransform.Helpers.testTransform import string_to_test
+
+# https://github.com/amueller/word_cloud
 from wordcloud import WordCloud
+
 import matplotlib.pyplot as plt
-
-
-words = sanitizeString(string_to_test).split()
 
 votes = getVoteData()
 
