@@ -1,7 +1,7 @@
 from collections import Counter
+
 from DataGathering.getVoteData import getVoteData
-from DataTransform.Helpers.sanitizeString import sanitizeString
-from DataTransform.Helpers.testTransform import string_to_test
+from DataGathering.sanitizeString import sanitizeString
 
 # https://github.com/amueller/word_cloud
 from wordcloud import WordCloud

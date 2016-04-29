@@ -1,4 +1,4 @@
-from DataTransform.Helpers.sanitizeString import sanitizeString
+from DataGathering.sanitizeString import sanitizeString
 
 def getSpeechSize(df):
     return df['Discurso'].map(lambda d: len(sanitizeString(str(d))))

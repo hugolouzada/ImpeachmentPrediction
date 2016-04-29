@@ -1,6 +1,6 @@
 from numpy import average
 
-from DataTransform.Helpers.sanitizeString import sanitizeString
+from DataGathering.sanitizeString import sanitizeString
 
 
 def calculateAverageWordSize(text):

@@ -4,8 +4,7 @@ import matplotlib.pyplot as plt
 import scipy as sp
 from wordcloud import WordCloud
 
-from DataGathering.getVoteData import getVoteData
-from DataTransform.Helpers.sanitizeString import sanitizeString
+from DataGathering.sanitizeString import sanitizeString
 
 
 class topDifferentWords:
