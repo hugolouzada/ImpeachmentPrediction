@@ -1,10 +1,10 @@
+from DataGathering import NameListPath
 from DataGathering.sanitizeString import sanitizeString
 
 
 def getNameList():
 
-    #names from http://assisbrasil.org/nomes.html
-    file = open("../Data/ListaDeNomes.txt",'r')
+    file = open(NameListPath,'r')
 
     names = set()
     for line in file:

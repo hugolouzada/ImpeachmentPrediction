@@ -18,7 +18,6 @@ def Test():
     testTransformDiscreteVar(votes, 'WordPresence_cunha', lambda x : getWordPresence(x,'cunha'))
     testTransformDiscreteVar(votes, 'WordPresence_dilma', lambda x : getWordPresence(x,'dilma'))
     testTransformDiscreteVar(votes, 'WordPresence_democracia', lambda x : getWordPresence(x,'democracia'))
-
     testTransformDiscreteVar(votes,'NamesPresence',lambda x: getProperNamePresence(x,namesList))
 
-Test()
+# Test()
