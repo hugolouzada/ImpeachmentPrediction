@@ -8,10 +8,11 @@ from Prediction.SplitTrainValid.splitVotes import splitVotes
 
 def featureSelection(plotPValue=True):
 
+    features, X_train, y_train, X_test, y_test = splitVotes()
+
     function_rule_selection = feature_selection.f_classif
     alpha_cutoff = 0.05
 
-    features, X_train, y_train, X_test, y_test = splitVotes()
 
     selection_rule = feature_selection.SelectFdr(function_rule_selection, alpha_cutoff)
     selection_rule.fit(X_train.values, y_train.values)
