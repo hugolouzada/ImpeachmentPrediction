@@ -18,7 +18,7 @@ def getCompleteVoteData():
         votes[col+'_encoded'] = LabelEncoder().fit_transform(votes[col])
 
     votes.drop('Discurso', axis=1, inplace=True)
-    votes.drop('Estado', axis=1, inplace=True)
-    votes.drop('Partido', axis=1, inplace=True)
+    # votes.drop('Estado', axis=1, inplace=True)
+    # votes.drop('Partido', axis=1, inplace=True)
 
     return votes
