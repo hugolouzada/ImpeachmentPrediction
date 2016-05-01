@@ -4,15 +4,10 @@ import matplotlib.pyplot as plt
 import warnings
 warnings.filterwarnings('ignore')
 
-from Prediction.SplitTrainValid.splitVotes import splitVotes
-
-def featureSelection(plotPValue=True):
-
-    features, X_train, y_train, X_test, y_test = splitVotes()
+def featureSelection(features, X_train, y_train, X_test, y_test, plotPValue=True,plotName=''):
 
     function_rule_selection = feature_selection.f_classif
     alpha_cutoff = 0.05
-
 
     selection_rule = feature_selection.SelectFdr(function_rule_selection, alpha_cutoff)
     selection_rule.fit(X_train.values, y_train.values)
@@ -33,7 +28,7 @@ def featureSelection(plotPValue=True):
 
         plt.xticks(fontsize=12)
 
-        plt.savefig('Temp/pvalue_someFeatures.png',bbox_inches='tight')
+        plt.savefig('Temp/pvalue_'+plotName+'.png',bbox_inches='tight')
 
     return X_train[all_select_features], y_train, X_test[all_select_features], y_test
 

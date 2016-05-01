@@ -24,7 +24,7 @@ class topDifferentWords:
             nWord = len(concatSpeeches.split())
             mostCommonWords = Counter(concatSpeeches.split()).most_common()
             for i in range(0,len(mostCommonWords)):
-                if name== 'Yes':
+                if name== True:
                     yesWordsDic[mostCommonWords[i][0]] = mostCommonWords[i][1] / (nWord)
                 else:
                     noWordsDic[mostCommonWords[i][0]]  = mostCommonWords[i][1] / (nWord)

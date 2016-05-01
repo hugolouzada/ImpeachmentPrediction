@@ -2,13 +2,7 @@ from time import time
 import sklearn.ensemble as skes
 import sklearn as sk
 
-
-from Prediction.FeatureSelection.featureSelection import featureSelection
-
-
-def getEstimation(verbose=True):
-
-    X_train, y_train, X_test, y_test = featureSelection(plotPValue = False)
+def getEstimation(X_train, y_train, X_test, y_test, verbose=True):
 
     start = time()
     rf = skes.RandomForestClassifier(n_estimators=5)
