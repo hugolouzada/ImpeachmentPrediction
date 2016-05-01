@@ -1,0 +1,15 @@
+TopDifferentWords
+Selecting 43 variables from 70, (61.4 %)
+['Has_brasil', 'Has_constituicao', 'Has_contra', 'Has_crime', 'Has_cunha', 'Has_defesa', 'Has_democracia', 'Has_deus', 'Has_dilma', 'Has_e', 'Has_eduardo', 'Has_em', 'Has_esperanca', 'Has_esse', 'Has_estado', 'Has_familia', 'Has_futuro', 'Has_gerais', 'Has_golpe', 'Has_homenagem', 'Has_isso', 'Has_luta', 'Has_meu', 'Has_meus', 'Has_michel', 'Has_minha', 'Has_nosso', 'Has_o', 'Has_paulo', 'Has_pelo', 'Has_pelos', 'Has_popular', 'Has_posicao', 'Has_presidenta', 'Has_presidente', 'Has_processo', 'Has_querida', 'Has_rio', 'Has_sou', 'Has_sr', 'Has_tem', 'Has_temer', 'Has_trabalhadores']
+CalculatedFeatures
+Selecting 1 variables from 4, (25.0 %)
+['NamesPresence']
+EstadoPartidoOrdem
+Selecting 2 variables from 3, (66.7 %)
+['Estado_encoded', 'Partido_encoded']
+EstadoPartidoOrdem_Calculated
+Selecting 3 variables from 7, (42.9 %)
+['Estado_encoded', 'NamesPresence', 'Partido_encoded']
+All
+Selecting 46 variables from 77, (59.7 %)
+['Estado_encoded', 'Has_brasil', 'Has_constituicao', 'Has_contra', 'Has_crime', 'Has_cunha', 'Has_defesa', 'Has_democracia', 'Has_deus', 'Has_dilma', 'Has_e', 'Has_eduardo', 'Has_em', 'Has_esperanca', 'Has_esse', 'Has_estado', 'Has_familia', 'Has_futuro', 'Has_gerais', 'Has_golpe', 'Has_homenagem', 'Has_isso', 'Has_luta', 'Has_meu', 'Has_meus', 'Has_michel', 'Has_minha', 'Has_nosso', 'Has_o', 'Has_paulo', 'Has_pelo', 'Has_pelos', 'Has_popular', 'Has_posicao', 'Has_presidenta', 'Has_presidente', 'Has_processo', 'Has_querida', 'Has_rio', 'Has_sou', 'Has_sr', 'Has_tem', 'Has_temer', 'Has_trabalhadores', 'NamesPresence', 'Partido_encoded']

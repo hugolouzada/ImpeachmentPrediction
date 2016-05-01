@@ -16,10 +16,8 @@ def featureSelection(features, X_train, y_train, X_test, y_test, plotPValue=True
     filtered_pvalues = list(filter(lambda x: x[0]<=alpha_cutoff, all_pvalues))
     all_select_features = list(map(lambda x: x[1], filtered_pvalues))
 
-    print('Selecting %d variables from %d, (%.1f %%)' % (len(all_select_features), len(features), len(list(filtered_pvalues)) * 100 / float(len(features))))
-    print(all_select_features)
-
     if (plotPValue):
+        print(plotName)
         pd.DataFrame(all_pvalues).set_index(1).sort(0).plot(kind='bar', alpha=0.7, color='green')
 
         plt.xlabel('Features', fontsize=30); plt.ylabel('P-value', fontsize=30); plt.legend('Pvalue')
@@ -29,6 +27,9 @@ def featureSelection(features, X_train, y_train, X_test, y_test, plotPValue=True
         plt.xticks(fontsize=12)
 
         plt.savefig('Temp/pvalue_'+plotName+'.png',bbox_inches='tight')
+
+    print('Selecting %d variables from %d, (%.1f %%)' % (len(all_select_features), len(features), len(list(filtered_pvalues)) * 100 / float(len(features))))
+    print(all_select_features)
 
     return X_train[all_select_features], y_train, X_test[all_select_features], y_test
 

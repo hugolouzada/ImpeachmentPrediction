@@ -44,7 +44,7 @@ class topDifferentWords:
 
         topWord = {}
         percLimit = 1
-        print("Top words on ",vote)
+        # print("Top words on ",vote)
         if vote=='Yes':
             thr = sp.percentile(freqs,q=100-percLimit)
         else:
