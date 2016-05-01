@@ -1,3 +1,5 @@
+from random import random
+
 from DataGathering.getNameList import getNameList
 from DataGathering.getVoteData import getVoteData
 from DataTransform import getSpeechSize, getLexicalDiversity, getAverageWordSize, getProperNamePresence, addTopDifferentWordsPresence
@@ -35,6 +37,10 @@ def getCompleteVoteData(addEstadoPartidoOrdem = False,addCalculatedFeatures = Fa
     if not addEstadoPartidoOrdem:
         votes.drop('Ordem', axis=1, inplace=True)
 
+    if (not addCalculatedFeatures) and (not addTopDifferentWords) and (not addEstadoPartidoOrdem):
+        votes['RandomFeature'] = votes['Vote'].map(lambda x: random())
+
     return votes
 
-# getCompleteVoteData()
+getCompleteVoteData()
+pass

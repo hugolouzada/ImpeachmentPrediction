@@ -28,8 +28,11 @@ def featureSelection(features, X_train, y_train, X_test, y_test, plotPValue=True
 
         plt.savefig('Temp/pvalue_'+plotName+'.png',bbox_inches='tight')
 
-    print('Selecting %d variables from %d, (%.1f %%)' % (len(all_select_features), len(features), len(list(filtered_pvalues)) * 100 / float(len(features))))
-    print(all_select_features)
+        print('Selecting %d variables from %d, (%.1f %%)' % (len(all_select_features), len(features), len(list(filtered_pvalues)) * 100 / float(len(features))))
+        print(all_select_features)
+
+    if len(all_select_features)==0:
+        all_select_features.append('RandomFeature')
 
     return X_train[all_select_features], y_train, X_test[all_select_features], y_test
 
