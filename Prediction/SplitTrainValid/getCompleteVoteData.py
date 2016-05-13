@@ -5,6 +5,9 @@ from DataGathering.getVoteData import getVoteData
 from DataTransform import getSpeechSize, getLexicalDiversity, getAverageWordSize, getProperNamePresence, addTopDifferentWordsPresence
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import Normalizer
+from sklearn.feature_extraction import DictVectorizer
+import pandas as pd
+
 
 
 def getCompleteVoteData(addEstadoPartidoOrdem = False,addCalculatedFeatures = False, addTopDifferentWords=False):
@@ -27,8 +30,13 @@ def getCompleteVoteData(addEstadoPartidoOrdem = False,addCalculatedFeatures = Fa
         addTopDifferentWordsPresence(votes)
 
     if addEstadoPartidoOrdem:
-        for col in ['Estado','Partido']:
-            votes[col+'_encoded'] = LabelEncoder().fit_transform(votes[col])
+        categoricalValues = votes[['Estado','Partido']]
+        categoricalDict = categoricalValues.T.to_dict().values()
+        vec = DictVectorizer()
+        multiCategory = pd.DataFrame(vec.fit_transform(categoricalDict).toarray())
+        multiCategory.columns = vec.get_feature_names()
+        votes = pd.concat([votes, multiCategory], axis=1)
+
 
     votes.drop('Discurso', axis=1, inplace=True)
     votes.drop('Estado', axis=1, inplace=True)
@@ -42,5 +50,4 @@ def getCompleteVoteData(addEstadoPartidoOrdem = False,addCalculatedFeatures = Fa
 
     return votes
 
-getCompleteVoteData()
-pass
+# getCompleteVoteData(addEstadoPartidoOrdem=True)

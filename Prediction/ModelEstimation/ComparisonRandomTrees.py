@@ -13,13 +13,13 @@ from Prediction.ModelEstimation.getEstimation import getEstimation
 from Prediction.SplitTrainValid.splitVotes import splitVotes
 
 # classifier = skes.RandomForestClassifier(n_estimators=5)
-# classifier = sktr.DecisionTreeClassifier()
+classifier = sktr.DecisionTreeClassifier(min_samples_leaf=50,max_depth=5)
 # classifier = skes.GradientBoostingClassifier()
 # classifier = sklin.RidgeClassifier()
-classifier = skneib.KNeighborsClassifier()
-classifierName = "KNeighborsClassifier"
+# classifier = skneib.KNeighborsClassifier()
+classifierName = "DecisionTreeClassifier"
 
-tries = 3
+tries = 1000
 featureSets = {}
 
 for addEstadoPartidoOrdem in [True, False]:
